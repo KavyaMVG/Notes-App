@@ -19,12 +19,12 @@ const Header = () => {
       ) : (
         <>
           <Button  variant="outline" className="hidden sm:block">
-            {/* <Link href="/signup">Signup</Link> */}
+            <Link href="/signup">Signup</Link>
             Signup
           </Button>
           <Button  variant="outline">
             Login
-            {/* <Link href="/login">Login</Link> */}
+            <Link href="/login">Login</Link>
           </Button>
         </>
       )}
