@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./styles/globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { Toaster } from "sonner";
-import Header from "@/components/ui/Header";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Notes App",
@@ -22,7 +22,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen w-full flex-col">
+          <div className="flex w-full flex-col">
             <Header />
           </div>
           <main className="flex flex-1 flex-col px-4 pt-10 xl:px-8">{children}</main>

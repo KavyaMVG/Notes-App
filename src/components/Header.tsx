@@ -1,10 +1,11 @@
 import { shadow } from "@/app/styles/utils";
 import { Button } from "@/components/ui/button";
-import { Link } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
+import Link from "next/link";
+import Logout from "./Logout";
 
 const Header = () => {
-  const user = null;
+  const user = 1;
   return (
     <div
       className="relative flex h-24 w-full bg-popover items-center justify-between px-3 sm:px-8"
@@ -13,23 +14,23 @@ const Header = () => {
       <h1 className="flex flex-col leading-7 pb-1 font-semibold text-2xl">
         Notes <span>App</span>
       </h1>
-
+      <div className="flex gap-2">
       {user ? (
-        <Button variant="outline">Logout</Button>
+        <Logout/>
       ) : (
         <>
-          <Button  variant="outline" className="hidden sm:block">
-            <Link href="/signup">Signup</Link>
-            Signup
+          <Button  asChild>
+            <Link className="hidden sm:block" href="/signup">Sign-up</Link>
           </Button>
-          <Button  variant="outline">
-            Login
+          <Button  asChild variant="outline">
             <Link href="/login">Login</Link>
           </Button>
         </>
       )}
+            <DarkModeToggle/>
 
-      <DarkModeToggle/>
+      </div>
+
     </div>
   );
 };
